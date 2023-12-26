@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-family: "Lobster", cursive;
+
+  background-color: #457b9d;
+  background-image: url("../img/ciudad.png");
+  background-size: contain;
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #df3448;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+/* Estilos para h2 */
+h2 {
+  background-color: #acdadc;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 10px 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Selecciona el primer párrafo y agrega contenido antes y después del texto */
+p:first-of-type::before {
+  content: "-";
+  margin-right: 0;
+  padding-right: 0;
+}
+
+p:first-of-type::after {
+  content: "-";
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Selecciona el primer párrafo y aplica los estilos */
+p:first-of-type {
+  text-align: center;
+  font-size: 1.2em;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Selecciona específicamente el primer párrafo después del h2 'Miauuuuuu!' y quita la letra capital */
+h2:nth-of-type(2) + p::first-letter {
+  font-size: initial;
+  float: none;
+  line-height: initial;
+  margin: 0;
+}
+
+/* Selecciona el primer párrafo y agrega contenido antes y después del texto */
+h2:nth-of-type(2) + p::before {
+  content: "-";
+  margin-right: 0;
+  padding-right: 0;
+}
+
+h2:nth-of-type(2) + p::after {
+  content: "-";
+  margin-left: 0;
+  padding-left: 0;
+}
+/* Centra el texto del párrafo que sigue inmediatamente después del h2 con 'Miauuuuuu!' */
+h2:nth-of-type(2) + p {
+  text-align: center;
+}
+
+/* Aplica estilos de letra capital a todos los párrafos excepto el primero */
+p:not(:first-of-type):not(h2:nth-of-type(2) + p)::first-letter {
+  float: left;
+  font-size: 2em;
+  line-height: 0.3em;
+  margin-right: 0.1em;
+  font-weight: bold;
+}
+
+/* Selecciona el segundo h2 en la página */
+h2:first-of-type ~ h2 {
+  text-align: center;
+  color: #df3448;
+  font-size: 2rem;
+}
+
+p {
+  background-color: #acdadc;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 20px 30px;
+  margin-bottom: 0;
+  color: #22355e;
+  box-shadow: inset 3px 0px rgba(127, 127, 127, 0.5);
+  border-left: none;
+}
+
+/* Ajusta el margen superior del primer h2 para que no se pegue al h1 */
+h2:first-of-type {
+  margin-top: 6.5rem;
+
+  box-shadow: inset 0px 7px 3px -3px rgba(127, 127, 127, 0.5),
+    inset 3px 0px rgba(127, 127, 127, 0.5);
+  border-top: none;
+
+  color: #df3448;
+  text-align: center;
+  padding-top: 3rem;
+  font-size: 2rem;
+}
+
+p + h2 {
+  /* border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  box-shadow: inset 3px 0px rgba(127, 127, 127, 0.5);
+  border-left: none;
+}
+
+/* Específico para el último párrafo antes de otro h2 o el final del contenido */
+p:last-of-type {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  box-shadow: inset 3px 0px rgba(127, 127, 127, 0.5);
+
+  border-left: none;
+  padding-bottom: 10rem;
+  margin-bottom: 25rem;
+
+  position: relative; /* Posiciona relativamente para el pseudo-elemento */
+}
+
+/* Crea un pseudo-elemento para el último párrafo que contendrá la imagen del gato */
+p:last-of-type::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background-image: url("../img/gato.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
